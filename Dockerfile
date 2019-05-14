@@ -31,11 +31,15 @@ RUN go get -x -d github.com/stamblerre/gocode \
 # Copy default endpoint specific user settings overrides into container to specify Go path
 COPY settings.vscode.json /root/.vscode-remote/data/Machine/settings.json
 
-# Verify git, process tools installed
-RUN apt-get update && apt-get -y install git procps
-
-# Clean up
-RUN apt-get autoremove -y \
+# Install git, process tools, zsh, locales
+RUN apt-get update && apt-get -y install git procps zsh less locales \
+    # Clean up
+    && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    # Add zh_CN locale support
+    && echo 'zh_CN.UTF-8 UTF-8' >> /etc/locale.gen \
+    && locale-gen
 
+# Install Oh-My-Zsh
+RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
