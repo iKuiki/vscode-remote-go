@@ -6,7 +6,7 @@
 
 相较于原本的Dockerfile，做了如下修改
 
-- 通过apt多安装了zsh less locales这三个组件
+- 通过apt多安装了zsh less locales git-flow这四个组件
 - 安装了oh-my-zsh
 - 将所有涉及apt的操作合为一句RUN以避免缓存文件出现在docker的层叠卷中
 - 生成了中文locale支持，在终端中中文的输入与输出都不会乱码了
