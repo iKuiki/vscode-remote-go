@@ -31,8 +31,8 @@ RUN go get -x -d github.com/stamblerre/gocode \
 # Copy default endpoint specific user settings overrides into container to specify Go path
 COPY settings.vscode.json /root/.vscode-remote/data/Machine/settings.json
 
-# Install git, process tools, zsh, locales, git-flow
-RUN apt-get update && apt-get -y install git procps zsh less locales git-flow \
+# Install git, process tools, zsh, locales, git-flow vim
+RUN apt-get update && apt-get -y install git procps zsh less locales git-flow vim \
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
