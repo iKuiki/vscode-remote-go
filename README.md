@@ -12,3 +12,4 @@
 - 生成了中文locale支持，在终端中中文的输入与输出都不会乱码了
 - 在官方给出的go工具列表基础上添加[gopls](golang.org/x/tools/cmd/gopls)
 - 时区设置为+0800
+- ENV Shell设置为zsh
