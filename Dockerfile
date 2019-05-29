@@ -29,9 +29,6 @@ RUN go get -x -d github.com/stamblerre/gocode 2>&1 \
     && go build -o gocode-gomod github.com/stamblerre/gocode \
     && mv gocode-gomod $GOPATH/bin/
 
-# Copy default endpoint specific user settings overrides into container to specify Go path
-COPY settings.vscode.json /root/.vscode-remote/data/Machine/settings.json
-
 # Configure apt
 ENV DEBIAN_FRONTEND=noninteractive
 
