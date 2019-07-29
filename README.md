@@ -8,8 +8,8 @@
 
 - 通过apt多安装了zsh less locales git-flow vim这5个组件
 - 安装了oh-my-zsh
-- 将所有涉及apt的操作合为一句RUN以避免缓存文件出现在docker的层叠卷中
+- ~~将所有涉及apt的操作合为一句RUN以避免缓存文件出现在docker的层叠卷中~~ 在官方新版中已经合并为一句
 - 生成了中文locale支持，在终端中中文的输入与输出都不会乱码了
-- 在官方给出的go工具列表基础上添加[gopls](golang.org/x/tools/cmd/gopls)
+- ~~在官方给出的go工具列表基础上添加[gopls](golang.org/x/tools/cmd/gopls)~~ 新版官方已经添加了
 - 时区设置为+0800
 - ENV Shell设置为zsh
